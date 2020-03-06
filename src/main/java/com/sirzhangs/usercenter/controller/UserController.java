@@ -1,5 +1,7 @@
 package com.sirzhangs.usercenter.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,7 +31,7 @@ public class UserController {
 	@ApiImplicitParam(name = "userVo", value = "用户userVo", required = true, dataType = "UserVo")
 	@PostMapping("register")
 	public RequestResult register(
-			@RequestBody UserVo userVo
+			@RequestBody @Valid UserVo userVo
 			) {
 		return userService.register(userVo);
 	}

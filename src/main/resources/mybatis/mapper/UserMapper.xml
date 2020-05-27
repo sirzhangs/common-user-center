@@ -5,18 +5,18 @@
 <mapper namespace="com.sirzhangs.usercenter.mapper.UserMapper">
 
 	<sql id="base_cloumn">
-		id, login_account, user_password，user_name,telephone,email,
-		auth_status,user_type, real_name,card_num,account_type
+		id, user_account,
+		user_password，user_name,telephone,email,create_time
 	</sql>
 
 	<insert id="add"
 		parameterType="com.sirzhangs.usercenter.entity.User">
-		INSERT INTO uc_user(id, login_account,
-		user_password,user_name,telephone,email, auth_status,user_type,
-		real_name,card_num,account_type)
-		VALUES(#{id}, #{loginAccount},
+		INSERT INTO uc_user(id, user_account,
+		user_password,user_name,telephone,email,create_time)
+		VALUES(#{id},
+		#{userAccount},
 		#{userPassword},#{userName},#{telephone},#{email},
-		#{authStatus},#{userType}, #{realName},#{cardNum},#{accountType})
+		#{createTime})
 	</insert>
 
 	<delete id="delete">
@@ -39,10 +39,6 @@
 		select
 		<include refid="base_cloumn" />
 		from uc_user
-		<where>
-			<if test="userType != null"> user_type = #{userType}</if>
-			<if test="authStatus != null">auth_statsu = #{authStatus}</if>
-		</where>
 	</select>
 
 </mapper>

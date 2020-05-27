@@ -1,0 +1,189 @@
+.header {
+    background-color: #000000c4;
+    width: 100%;
+    height: 50px;
+    z-index: 11;
+}
+
+.header .header-menu{
+	width: 100%;
+	float: right;
+	padding: 0px 20px;
+	height: calc(100% - 20px);
+}
+
+.header .header-menu .menu-list{
+	float: right;
+	font-size: 14px;
+	padding-top: 10px;
+}
+
+.inline-div{
+	display: inline-block;
+}
+
+.block-div{
+	display: block;
+}
+
+.web-search{
+	font-size: 12px;
+	color: #ffffff;
+	background-color: #ffffff;
+	width: 282px;
+}
+
+.web-search span{
+	margin: 0px 5px;
+}
+
+.web-search .search-input{
+	display: inline-block;
+}
+
+.web-search .search-input input{
+	width: 250px;
+	height:32px;
+	border: 0px;
+	color: #000000;
+}
+
+.web-search .glyphicon{
+	color: #ddd;
+	font-size: 16px;
+	top: 3px;
+}
+
+.header .header-menu .menu-item{
+	margin-left: 20px;
+	text-decoration: none;
+	cursor: default;
+	color: #ffffff;
+	padding: 8px 5px;
+}
+
+.header .header-menu .menu-item span{
+	border: 1px solid #ff4200;
+	border-radius: 10px;
+	background-color: #ff4200;
+}
+
+.header .header-menu .menu-item img{
+	border: 1px solid #ffffff;
+	border-radius: 15px;
+	width: 30px;
+	height: 30px;
+	cursor: default;
+}
+
+.user-info-slide{
+	position: absolute;
+	right: 0px;
+	width: 300px;
+	height: 350px;
+	z-index: 10;
+	background-color: #ffffff;
+	box-shadow: 2px 2px 2px 2px #888888;
+}
+
+.user-header{
+	height: 80px;
+	padding: 10px 10px;
+	border-bottom: 1px solid rgb(239, 239, 239);
+}
+
+.user-header .user-base{
+	margin-top: 5px;	
+}
+
+.user-header .user-item{
+	color: #000000;
+	padding: 0px 10px;
+	border-right: 1px solid #ddd;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.user-header .user-account img{
+	border: 1px solid #ffffff;
+	border-radius: 15px;
+	width: 30px;
+	height: 30px;
+	cursor: default;
+}
+
+.user-content{
+	padding: 10px 0px;
+}
+
+.user-content .user-item{
+	color: #000000;
+	padding: 8px 10px;
+	border-right: 1px solid #ddd;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.user-content .user-item:hover{
+	background-color: #ddd;
+}
+
+.user-content .user-item span{
+	margin-right: 5px;
+}
+
+.user-content .user-account{
+	height: 40px;
+}
+
+.user-footer{
+	height: 40px;
+	background-color: #ddd;
+}
+
+.user-footer p{
+	text-align: center;
+	padding: 10px 0px;
+	cursor: pointer;
+}
+
+.content {
+    background-color: #ffffff;
+    width: 100%;
+    height: calc(100vh - 100px);
+}
+
+.content .menu {
+  /*   background-color: dodgerblue; */
+    width: 200px;
+    height: 100%;
+    float: left;
+}
+
+.content .main {
+    width: calc(100% - 220px);
+    height: 100%;
+    float: left;
+}
+
+.content .main .tool {
+    padding-left: 13px;
+}
+
+.footer {
+    background-color: #ffffff;
+    width: 100%;
+    height: 50px;
+}
+
+.footer .copyright {
+    width: 100%;
+    text-align: center;
+    padding-top: 15px;
+}
+
+/** bootstrap **/
+
+.content .menu .panel-group{
+	margin-bottom: 0px;
+}

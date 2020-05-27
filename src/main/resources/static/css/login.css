@@ -1,0 +1,68 @@
+.login {
+    width: 500px;
+    height: 550px;
+    float: right;
+    margin-top: 80px;
+    margin-right: 350px;
+    /* border: 1px solid #000000; */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, .15);
+}
+
+.login .switch {
+    height: 50px;
+}
+
+.login .switch .col-sm-6 {
+    padding-top: 10px;
+    height: 50px;
+}
+
+.login .switch .col-sm-6:first-child {
+    border-right: 1px solid #d8d8d8;
+}
+
+.login .switch .col-sm-6 p {
+    text-align: center;
+}
+
+.login .login-content {
+    padding: 80px 100px;
+    border-top: 1px solid #d8d8d8;
+}
+
+.login .login-content .form-group {
+    height: 45px;
+}
+
+.login .login-content .form-control {
+    height: 42px;
+}
+
+.login .login-content .form-control:hover {
+    border: 1px solid #ff6a00;
+}
+
+.login .login-content .login-label {
+    font-size: 20px;
+}
+
+.login .login-content .login-button {
+    background-color: #ff6a00;
+    border: 0px;
+    width: 100%;
+    height: 45px;
+    color: #ffffff;
+}
+
+.login .login-content .login-other {
+    float: right;
+    cursor: pointer;
+}
+
+.login .login-content .login-other a:first-child {
+    padding-right: 10px;
+}
+
+.login .login-content .login-other a {
+    text-decoration: none;
+}

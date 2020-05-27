@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>用户注册</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Latest compiled and minified CSS -->
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.css">
+<link rel="stylesheet" type="text/css" th:href="@{/css/common.css}" />
+</head>
+
+<body>
+	<!--/*@thymesVar id=" name " type="java.lang.String "*/-->
+	<div class="header"></div>
+	<div class="content">
+		<div class="register">
+			<div class="register-content">
+				<div class="form-group">
+					<div class="register-label">用户注册</div>
+				</div>
+				<form class="form-horizontal" role="form">
+					<div class="form-group">
+						<div class="col-sm-12">
+							<input id="userName" type="text" class="form-control"
+								placeholder="设置你的昵称">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<input id="userPassword" type="password" class="form-control"
+								placeholder="设置你的登录密码">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<input id="passwordAgain" type="text" class="form-control"
+								placeholder="请再次输入你的密码">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12 phone">
+							<div class="phone-label">
+								<span>+86</span>
+							</div>
+							<div class="phone-text">
+								<input id="telephone" type="text" class="form-control"
+									placeholder="请输入手机号码">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<div class="checkcode-text">
+								<input id="checkcode" type="text" class="form-control"
+									placeholder="请输入验证码">
+							</div>
+							<div class="checkcode-sub">
+								<input type="button" class="checkcode-btn" value="获取验证码">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<button class="register-button">注册</button>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<div>
+								<label class="checkbox-inline"> 
+									<input type="checkbox" id="secret" value="true"> 已阅读并同意<a>《用户协议》</a><a>《隐私政策》</a>
+								</label>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<p class="copyright">© 2020 网易公司 网易公司 隐私政策 京ICP证080268号
+			京ICP备10005211号</p>
+	</div>
+</body>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script
+	src="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.js"></script>
+<!-- Latest compiled and minified Locales -->
+<script
+	src="https://unpkg.com/bootstrap-table@1.15.3/dist/locale/bootstrap-table-zh-CN.min.js"></script>
+<script th:src="@{/js/register.js}"></script>
+
+</html>

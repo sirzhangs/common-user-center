@@ -18,7 +18,7 @@ import com.sirzhangs.usercenter.common.constant.VerificationCodeTypeConstan;
 import com.sirzhangs.usercenter.entity.User;
 import com.sirzhangs.usercenter.mapper.UserMapper;
 import com.sirzhangs.usercenter.service.UserService;
-import com.sirzhangs.usercenter.vo.UserVo;
+import com.sirzhangs.usercenter.vo.UserVO;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -36,7 +36,7 @@ public class UserServiceImpl implements UserService {
 	private UserMapper userMapper;
 
 	@Override
-	public RequestResult register(UserVo userVo) {
+	public RequestResult register(UserVO userVo) {
 		String keys = CHECK_CODE + userVo.getTelephone();
 		boolean flag = redisUtil.isExsistKeyAndValue(keys, userVo.getCode());
 		if (!flag) {
@@ -48,6 +48,7 @@ public class UserServiceImpl implements UserService {
 		User user = new User();
 		BeanUtils.copyProperties(userVo, user);
 		user.setId(GeneratorCodeUtil.generatorCode(32));
+		user.setUserAccount(GeneratorCodeUtil.generatorCode(8));
 		Integer count = userMapper.add(user);
 		return count > 0 ? RequestResult.ok(MessageContant.REGISTER_SUCCESS)
 				: RequestResult.fail(MessageContant.REGISTER_FAIL);
@@ -58,12 +59,12 @@ public class UserServiceImpl implements UserService {
 
 		String newToken = null;
 
-		String token = redisUtil.getValueForString(TOKEN_CODE + user.getLoginAccount());
+		String token = redisUtil.getValueForString(TOKEN_CODE + user.getUserAccount());
 		if (!StringUtils.isEmpty(token)) {
 			return RequestResult.ok(MessageContant.SIGNIN_SUCCESS, token);
 		}
 		try {
-			newToken = MD5Util.md5(user.getLoginAccount() + user.getUserPassword());
+			newToken = MD5Util.md5(user.getUserAccount() + user.getUserPassword());
 		} catch (Exception e) {
 			return RequestResult.fail();
 		}
@@ -71,20 +72,20 @@ public class UserServiceImpl implements UserService {
 		if (newToken.isEmpty()) {
 			return RequestResult.fail();
 		}
-		boolean flag = redisUtil.setExpireValue(TOKEN_CODE + user.getLoginAccount(), newToken, 15 * 60 * 60 * 1000L);
+		boolean flag = redisUtil.setExpireValue(TOKEN_CODE + user.getUserAccount(), newToken, 15 * 60 * 60 * 1000L);
 		return flag ? RequestResult.ok(MessageContant.SIGNIN_SUCCESS, newToken)
 				: RequestResult.fail(MessageContant.SIGNIN_FAIL);
 	}
 
 	@Override
-	public RequestResult signOut(UserVo userVo) {
+	public RequestResult signOut(UserVO userVo) {
 		boolean flag = false;
 
 		// 查询token
-		String token = redisUtil.getValueForString(userVo.getLoginAccount());
+		String token = redisUtil.getValueForString(TOKEN_CODE + userVo.getUserAccount());
 		// 验证token是否正确
 		if (!StringUtils.isEmpty(token) && token.equals(userVo.getToken())) {
-			flag = redisUtil.removeKey(userVo.getLoginAccount());
+			flag = redisUtil.removeKey(userVo.getUserAccount());
 		}
 
 		return flag ? RequestResult.ok(MessageContant.SIGNOUT_SUCCESS)

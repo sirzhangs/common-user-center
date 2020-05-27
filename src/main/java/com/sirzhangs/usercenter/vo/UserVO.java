@@ -9,12 +9,12 @@ import lombok.EqualsAndHashCode;
 
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class UserVo extends User implements Serializable{
+public class UserVO extends User implements Serializable{
 	
 	private static final long serialVersionUID = -3376374028505989614L;
 
 	private String code;
 
-	public String token;
+	private String token;
 	
 }

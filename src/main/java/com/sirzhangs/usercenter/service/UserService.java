@@ -2,7 +2,7 @@ package com.sirzhangs.usercenter.service;
 
 import com.sirzhangs.common.entity.RequestResult;
 import com.sirzhangs.usercenter.entity.User;
-import com.sirzhangs.usercenter.vo.UserVo;
+import com.sirzhangs.usercenter.vo.UserVO;
 
 public interface UserService {
 
@@ -11,7 +11,7 @@ public interface UserService {
 	 * @param user
 	 * @return
 	 */
-	RequestResult register(UserVo userVo);
+	RequestResult register(UserVO userVo);
 	
 	/**
 	 * 用户登录
@@ -25,7 +25,7 @@ public interface UserService {
 	 * @param user
 	 * @return
 	 */
-	RequestResult signOut(UserVo userVo);
+	RequestResult signOut(UserVO userVo);
 	
 	/**
 	 * 刷新token

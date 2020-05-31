@@ -18,7 +18,7 @@
 		#{userPassword},#{userName},#{telephone},#{email},
 		#{createTime})
 	</insert>
-
+	
 	<delete id="delete">
 		DELETE FROM uc_user
 		WHERE id IN

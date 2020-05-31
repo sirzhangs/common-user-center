@@ -12,7 +12,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class Role extends DataBaseBase implements Serializable{
+public class Role extends DataBase implements Serializable{
 
 	/**
 	 * 	序列号

@@ -10,7 +10,7 @@ import lombok.Data;
  *
  */
 @Data
-public class DataBaseBase {
+public class DataBase {
 
 	/**
 	 * 	创建时间

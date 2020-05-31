@@ -14,7 +14,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class Dictionary extends DataBaseBase implements Serializable{
+public class Dictionary extends DataBase implements Serializable{
 
 	/**
 	 * 	序列号
